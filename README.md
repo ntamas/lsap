@@ -8,7 +8,7 @@ This module is useful in cases when you need an efficient LSAP solver but you
 do not want to depend on the full SciPy library.
 
 Currently, the module depends on NumPy for array management. This may be
-relaxes in the future if Python's stable API gets extended with functions to
+relaxed in the future if Python's stable API gets extended with functions to
 manage Python buffer objects.
 
 License
