@@ -13,13 +13,9 @@ message_template = "chore: bumped version to {new_version}"
 tag_template = "{new_version}"
 
 [[file]]
-src = "pyproject.toml"
-search = 'version = "{current_version}"'
-
-[[file]]
 src = "src/lsap/_version.py"
-version_template = "({major}, {minor}, {patch})"
-search = "__version_info__ = {current_version}"
+version_template = "{major}.{minor}.{patch}"
+search = '__version__ = "{current_version}"'
 
 [[before_commit]]
 name = "Run tests"
