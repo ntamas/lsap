@@ -1,2 +1,8 @@
 [build-system]
 requires = ["setuptools>=60.0", "wheel", "numpy == 1.21.0"]
+
+[tool.cibuildwheel]
+build = "cp37-*"
+test-requires = "pytest"
+test-command = "pytest {project}/tests"
+

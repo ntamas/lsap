@@ -60,6 +60,19 @@ static PyObject* solve(PyObject* self, PyObject* args)
         return NULL;
     }
 
+    if (PyArray_NDIM(obj_cont) == 0 || (PyArray_NDIM(obj_cont) == 1 && PyArray_DIM(obj_cont, 0) == 0)) {
+        dim = 0;
+        a = PyArray_SimpleNew(1, &dim, NPY_INT64);
+        if (!a)
+            goto cleanup;
+
+        b = PyArray_SimpleNew(1, &dim, NPY_INT64);
+        if (!b)
+            goto cleanup;
+
+        goto ok;
+    }
+
     if (PyArray_NDIM(obj_cont) != 2) {
         PyErr_Format(PyExc_ValueError,
             "expected a matrix (2-D array), got a %d array",
@@ -97,6 +110,7 @@ static PyObject* solve(PyObject* self, PyObject* args)
         goto cleanup;
     }
 
+ok:
     result = Py_BuildValue("OO", a, b);
 
 cleanup:
