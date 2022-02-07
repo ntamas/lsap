@@ -1,5 +1,5 @@
-lsap
-====
+minilsap
+========
 
 A Python module to solve the linear sum assignment problem (LSAP) efficiently.
 Extracted from SciPy, without significant modifications.

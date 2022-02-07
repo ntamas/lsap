@@ -127,7 +127,7 @@ static PyMethodDef lsap_module_methods[] = {
 
 static struct PyModuleDef moduledef = {
     PyModuleDef_HEAD_INIT,
-    "lsap._lsap",
+    "minilsap._lsap",
     "Solves the rectangular linear sum assignment.",
     -1,
     lsap_module_methods,

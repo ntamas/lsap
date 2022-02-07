@@ -1,4 +1,4 @@
-from lsap import solve
+from minilsap import solve
 
 
 def test_solve_square():

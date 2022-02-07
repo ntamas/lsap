@@ -27,7 +27,7 @@ else:
 setup_args = dict(
     ext_modules=[
         Extension(
-            "lsap._lsap",
+            "minilsap._lsap",
             ["src/_lsap/rectangular_lsap.cpp", "src/_lsap/_lsap_module.cpp"],
             py_limited_api=True,
             include_dirs=[numpy.get_include()],
