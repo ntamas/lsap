@@ -2,7 +2,7 @@
 efficiently.
 """
 
-from .solver import solve
+from .solver import linear_sum_assignment
 from ._version import __version_info__, __version__
 
-__all__ = ("solve", "__version_info__", "__version__")
+__all__ = ("linear_sum_assignment", "__version_info__", "__version__")
