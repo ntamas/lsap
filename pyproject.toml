@@ -7,3 +7,6 @@ skip = "*-musllinux*"
 test-requires = "pytest"
 test-command = "pytest {project}/tests"
 
+[tool.cibuildwheel.macos]
+archs = ["universal2"]
+
