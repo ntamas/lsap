@@ -19,5 +19,3 @@ for files including a different license header.
 
 The LSAP solver copied from SciPy is also licensed under the 3-clause BSD
 license.
-
-
