@@ -8,5 +8,5 @@ test-requires = "pytest"
 test-command = "pytest {project}/tests"
 
 [tool.cibuildwheel.macos]
+build = "cp38-*"
 archs = ["universal2"]
-
