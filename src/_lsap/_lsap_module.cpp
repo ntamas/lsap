@@ -50,6 +50,7 @@ static PyObject* solve(PyObject* self, PyObject* args)
     int maximize = 0;
     int ret;
     npy_intp num_rows, num_cols, dim;
+    int64_t *pa, *pb;
     double* cost_matrix;
 
     if (!PyArg_ParseTuple(args, "Op", &obj_cost, &maximize))
@@ -97,10 +98,16 @@ static PyObject* solve(PyObject* self, PyObject* args)
     if (!b)
         goto cleanup;
 
+    pa = (int64_t*)PyArray_DATA((PyArrayObject*)a);
+    pb = (int64_t*)PyArray_DATA((PyArrayObject*)b);
+
+    Py_BEGIN_ALLOW_THREADS;
+
     ret = solve_rectangular_linear_sum_assignment(
-        num_rows, num_cols, cost_matrix, maximize,
-        (int64_t*)PyArray_DATA((PyArrayObject*)a),
-        (int64_t*)PyArray_DATA((PyArrayObject*)b));
+        num_rows, num_cols, cost_matrix, maximize, pa, pb);
+
+    Py_END_ALLOW_THREADS;
+
     if (ret == RECTANGULAR_LSAP_INFEASIBLE) {
         PyErr_SetString(PyExc_ValueError, "cost matrix is infeasible");
         goto cleanup;
