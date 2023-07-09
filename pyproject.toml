@@ -10,3 +10,8 @@ test-command = "pytest {project}/tests"
 [tool.cibuildwheel.macos]
 build = "cp38-*"
 archs = ["universal2"]
+
+[tool.ruff]
+ignore = ["B905", "C901", "E402", "E501"]
+line-length = 80
+select = ["B", "C", "E", "F", "W"]

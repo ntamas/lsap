@@ -24,8 +24,8 @@ if platform.python_implementation() == "CPython":
         cmdclass = {"bdist_wheel": bdist_wheel}
 else:
     cmdclass = {}
-setup_args = dict(
-    ext_modules=[
+setup_args = {
+    "ext_modules": [
         Extension(
             "minilsap._lsap",
             ["src/_lsap/rectangular_lsap.cpp", "src/_lsap/_lsap_module.cpp"],
@@ -35,6 +35,6 @@ setup_args = dict(
             define_macros=[("Py_LIMITED_API", PY_LIMITED_API), ("PY_SSIZE_T_CLEAN", 1)],
         )
     ],
-    cmdclass=cmdclass,
-)
+    "cmdclass": cmdclass,
+}
 setup(**setup_args)
