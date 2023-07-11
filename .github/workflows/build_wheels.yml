@@ -43,6 +43,7 @@ jobs:
       - uses: mymindstorm/setup-emsdk@v12
         with:
           version: '3.1.32'
+          actions-cache-folder: 'emsdk-cache'
 
       - name: Build wheel
         run: |
