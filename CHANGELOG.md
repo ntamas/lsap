@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added compatibility with NumPy 2.
 
+## [0.2.2] - 2023-07-09
+
+- Python GIL is now released while minilsap is running the calculation.
+
 ## [0.2.0] - 2022-02-07
 
 - Changed API to be a drop-in replacement for
