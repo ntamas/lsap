@@ -1,17 +1,33 @@
 [build-system]
-requires = ["setuptools>=60.0", "wheel", "numpy>=1.21.0"]
+requires = ["setuptools>=60.0", "wheel", "numpy>=2.2.0"]
+
+[project]
+name = "minilsap"
+description = "Python module to solve the linear sum assignment problem (LSAP) efficiently"
+dynamic = ["version"]
+readme = "README.md"
+maintainers = [{ name = "Tamas Nepusz", email = "tamas@collmot.com"}]
+urls = { homepage = "https://github.com/ntamas/lsap" }
+keywords = ["lsap", "munkres", "kuhn-munkres", "linear sum assignment problem"]
+classifiers = [
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10"
+]
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
 
 [tool.cibuildwheel]
-build = "cp37-*"
+build = "cp310-*"
 skip = "*-musllinux*"
 test-requires = "pytest"
 test-command = "pytest {project}/tests"
 
 [tool.cibuildwheel.macos]
-build = "cp38-*"
+build = "cp310-*"
 archs = ["universal2"]
 
 [tool.ruff]
-ignore = ["B905", "C901", "E402", "E501"]
 line-length = 80
-select = ["B", "C", "E", "F", "W"]
+lint.ignore = ["C901", "E402", "E501"]
+lint.select = ["B", "C", "E", "F", "W"]

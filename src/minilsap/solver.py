@@ -8,7 +8,8 @@ if TYPE_CHECKING:
 
 
 def linear_sum_assignment(
-    cost_matrix: Union[Sequence[Sequence[float]], ArrayLike], maximize: bool = False
+    cost_matrix: Union[Sequence[Sequence[float]], ArrayLike],
+    maximize: bool = False,
 ) -> Tuple[ndarray, ndarray]:
     """Solve the linear sum assignment problem.
 

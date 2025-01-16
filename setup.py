@@ -3,8 +3,8 @@ import platform
 
 from setuptools import setup, Extension
 
-PY_LIMITED_API = "0x03070000"
-PY_LIMITED_API_VERSION = (3, 7)
+PY_LIMITED_API = "0x03100000"
+PY_LIMITED_API_VERSION = (3, 10)
 
 # Workaround to make "pip wheel" build correct ABI3 wheels
 if platform.python_implementation() == "CPython":
@@ -32,7 +32,10 @@ setup_args = {
             py_limited_api=True,
             include_dirs=[numpy.get_include()],
             extra_compile_args=["-std=c++11", "-Wall"],
-            define_macros=[("Py_LIMITED_API", PY_LIMITED_API), ("PY_SSIZE_T_CLEAN", 1)],
+            define_macros=[
+                ("Py_LIMITED_API", PY_LIMITED_API),
+                ("PY_SSIZE_T_CLEAN", 1),
+            ],
         )
     ],
     "cmdclass": cmdclass,
