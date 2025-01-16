@@ -79,6 +79,7 @@ jobs:
         - uses: actions/download-artifact@v4
           with:
             path: dist
+            merge-multiple: true
 
         - name: Exclude WASM wheels
           run: rm dist/*wasm*.whl
