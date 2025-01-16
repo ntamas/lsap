@@ -19,4 +19,4 @@ search = '__version__ = "{current_version}"'
 
 [[before_commit]]
 name = "Run tests"
-cmd = "tox -e py39 && pre-commit run --all-files"
+cmd = "tox -e py310 && pre-commit run --all-files"
