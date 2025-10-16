@@ -6,15 +6,21 @@ name = "minilsap"
 description = "Python module to solve the linear sum assignment problem (LSAP) efficiently"
 dynamic = ["version"]
 readme = "README.md"
-maintainers = [{ name = "Tamas Nepusz", email = "tamas@collmot.com"}]
+maintainers = [{ name = "Tamas Nepusz", email = "tamas@collmot.com" }]
 urls = { homepage = "https://github.com/ntamas/lsap" }
 keywords = ["lsap", "munkres", "kuhn-munkres", "linear sum assignment problem"]
 classifiers = [
-    "License :: OSI Approved :: BSD License",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.10"
+  "Development Status :: 5 - Production/Stable",
+  "License :: OSI Approved :: BSD License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
 ]
-license = { file = "LICENSE" }
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
 requires-python = ">=3.10"
 dependencies = ["numpy>=1.21.0"]
 
