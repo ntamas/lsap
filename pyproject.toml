@@ -11,7 +11,6 @@ urls = { homepage = "https://github.com/ntamas/lsap" }
 keywords = ["lsap", "munkres", "kuhn-munkres", "linear sum assignment problem"]
 classifiers = [
   "Development Status :: 5 - Production/Stable",
-  "License :: OSI Approved :: BSD License",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
