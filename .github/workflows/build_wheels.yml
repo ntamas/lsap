@@ -39,7 +39,7 @@ jobs:
       - uses: actions/setup-python@v4
         name: Install Python
         with:
-          python-version: "3.14"
+          python-version: "3.13"
 
       - uses: mymindstorm/setup-emsdk@v14
         with:
